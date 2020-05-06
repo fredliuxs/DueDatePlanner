@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import GoogleSignIn
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     let showLoginScreen = true
-    
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -31,16 +32,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
     }
     
-    @objc
-    func handleLogin() {
-        print("TODO: Implement sign in from the SceneDelegate")
-    }
-    
-    @objc
-    func handleLogout() {
-        print("TODO: Implement sign out from the SceneDelegate")
-    }
-    
     func showLoginViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         window!.rootViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
@@ -49,6 +40,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func showNavViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         window!.rootViewController = storyboard.instantiateViewController(withIdentifier: "NavViewController")
+    }
+    
+    @objc
+    func handleLogin() {
+        showNavViewController()
+    }
+    
+    @objc
+    func handleLogout() {
+        GIDSignIn.sharedInstance()?.signOut()
+        try! Auth.auth().signOut()
+        showLoginViewController()
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

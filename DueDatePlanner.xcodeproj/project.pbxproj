@@ -18,6 +18,7 @@
 		66AD415E246326DF00F2B1B6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AD415D246326DF00F2B1B6 /* MainViewController.swift */; };
 		66AD416024632AB000F2B1B6 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AD415F24632AB000F2B1B6 /* CreateViewController.swift */; };
 		66AD416224632C9700F2B1B6 /* StatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AD416124632C9700F2B1B6 /* StatViewController.swift */; };
+		66AD416624633E0500F2B1B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66AD416524633E0500F2B1B6 /* GoogleService-Info.plist */; };
 		96510C493E002D2E69B457A7 /* Pods_DueDatePlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505498E7AE7E04D9F631C66A /* Pods_DueDatePlanner.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		66AD415D246326DF00F2B1B6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		66AD415F24632AB000F2B1B6 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		66AD416124632C9700F2B1B6 /* StatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatViewController.swift; sourceTree = "<group>"; };
+		66AD416524633E0500F2B1B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		957DD6636CE89B529C22E46D /* Pods-DueDatePlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DueDatePlanner.debug.xcconfig"; path = "Target Support Files/Pods-DueDatePlanner/Pods-DueDatePlanner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 				66AD415D246326DF00F2B1B6 /* MainViewController.swift */,
 				66AD415F24632AB000F2B1B6 /* CreateViewController.swift */,
 				66AD416124632C9700F2B1B6 /* StatViewController.swift */,
+				66AD416524633E0500F2B1B6 /* GoogleService-Info.plist */,
 			);
 			path = DueDatePlanner;
 			sourceTree = "<group>";
@@ -118,6 +121,7 @@
 				66AD413D246318E400F2B1B6 /* Frameworks */,
 				66AD413E246318E400F2B1B6 /* Resources */,
 				FD7B76FAA873A66F23A70D21 /* [CP] Embed Pods Frameworks */,
+				427E182C6B60353880FC0302 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66AD4150246318E600F2B1B6 /* LaunchScreen.storyboard in Resources */,
+				66AD416624633E0500F2B1B6 /* GoogleService-Info.plist in Resources */,
 				66AD414D246318E600F2B1B6 /* Assets.xcassets in Resources */,
 				66AD414B246318E400F2B1B6 /* Main.storyboard in Resources */,
 			);
@@ -175,6 +180,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		427E182C6B60353880FC0302 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DueDatePlanner/Pods-DueDatePlanner-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DueDatePlanner/Pods-DueDatePlanner-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DueDatePlanner/Pods-DueDatePlanner-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A7527AFFEE1AB12AE35A9E55 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
