@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             print("Error with Google Auth! Error: \(error.localizedDescription)")
             return
         }
-        print("You are signed in using Google account: \(user.profile.email)")
+        print("You are signed in using Google account: \(user.profile.email!)")
         //        guard let authentication = user.authentication else { return }
         //        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
         //                                                       accessToken: authentication.accessToken)
