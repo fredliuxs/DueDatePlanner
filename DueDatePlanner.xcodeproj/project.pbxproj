@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -58,7 +58,6 @@
 				957DD6636CE89B529C22E46D /* Pods-DueDatePlanner.debug.xcconfig */,
 				222133DE510E77E000A6A8B0 /* Pods-DueDatePlanner.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

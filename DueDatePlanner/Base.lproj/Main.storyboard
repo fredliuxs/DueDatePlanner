@@ -10,7 +10,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="DueDatePlanner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="DueDatePlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,7 +118,7 @@
         <!--Navigation Controller-->
         <scene sceneID="UQY-d5-tQs">
             <objects>
-                <navigationController id="xKK-XY-BCU" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavViewController" id="xKK-XY-BCU" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bjx-IX-m3D">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -140,7 +140,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXo-Fu-2KF">
-                                <rect key="frame" x="0.0" y="1262" width="1122" height="50"/>
+                                <rect key="frame" x="0.0" y="974" width="768" height="50"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="oxC-iS-pT6"/>
                                     <barButtonItem title="Create New Due Date" id="QKJ-4f-os2">
@@ -282,9 +282,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z9b-iD-18L">
-                                <rect key="frame" x="0.0" y="946" width="768" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9b-iD-18L">
+                                <rect key="frame" x="0.0" y="974" width="768" height="50"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="VSL-F3-gtQ"/>
                                     <barButtonItem title="Logout" id="Jag-g9-EIA"/>
@@ -302,6 +301,11 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2H8-sc-e7d" firstAttribute="bottom" secondItem="Z9b-iD-18L" secondAttribute="bottom" id="Nxc-Lu-FaH"/>
+                            <constraint firstItem="Z9b-iD-18L" firstAttribute="leading" secondItem="2H8-sc-e7d" secondAttribute="leading" id="jEb-mA-Zq3"/>
+                            <constraint firstItem="Z9b-iD-18L" firstAttribute="trailing" secondItem="2H8-sc-e7d" secondAttribute="trailing" id="xSJ-nI-04N"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2H8-sc-e7d"/>
                     </view>
                     <navigationItem key="navigationItem" title="User Settings" id="dbj-k0-CxW"/>
