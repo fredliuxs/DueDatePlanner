@@ -19,6 +19,7 @@
 		66AD416024632AB000F2B1B6 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AD415F24632AB000F2B1B6 /* CreateViewController.swift */; };
 		66AD416224632C9700F2B1B6 /* StatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AD416124632C9700F2B1B6 /* StatViewController.swift */; };
 		66AD416624633E0500F2B1B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66AD416524633E0500F2B1B6 /* GoogleService-Info.plist */; };
+		66AD416824634DC100F2B1B6 /* DueDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AD416724634DC100F2B1B6 /* DueDate.swift */; };
 		96510C493E002D2E69B457A7 /* Pods_DueDatePlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505498E7AE7E04D9F631C66A /* Pods_DueDatePlanner.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		66AD415F24632AB000F2B1B6 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		66AD416124632C9700F2B1B6 /* StatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatViewController.swift; sourceTree = "<group>"; };
 		66AD416524633E0500F2B1B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		66AD416724634DC100F2B1B6 /* DueDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DueDate.swift; sourceTree = "<group>"; };
 		957DD6636CE89B529C22E46D /* Pods-DueDatePlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DueDatePlanner.debug.xcconfig"; path = "Target Support Files/Pods-DueDatePlanner/Pods-DueDatePlanner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,6 +99,7 @@
 				66AD415F24632AB000F2B1B6 /* CreateViewController.swift */,
 				66AD416124632C9700F2B1B6 /* StatViewController.swift */,
 				66AD416524633E0500F2B1B6 /* GoogleService-Info.plist */,
+				66AD416724634DC100F2B1B6 /* DueDate.swift */,
 			);
 			path = DueDatePlanner;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			files = (
 				66AD4148246318E400F2B1B6 /* LoginViewController.swift in Sources */,
 				66AD415C246324F800F2B1B6 /* SortViewController.swift in Sources */,
+				66AD416824634DC100F2B1B6 /* DueDate.swift in Sources */,
 				66AD416024632AB000F2B1B6 /* CreateViewController.swift in Sources */,
 				66AD4144246318E400F2B1B6 /* AppDelegate.swift in Sources */,
 				66AD415E246326DF00F2B1B6 /* MainViewController.swift in Sources */,
