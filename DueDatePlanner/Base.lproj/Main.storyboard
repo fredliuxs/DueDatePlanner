@@ -110,6 +110,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="fSM-u9-HZ2" id="jHt-4g-qhZ"/>
+                        <outlet property="passwordTextField" destination="iCZ-ak-uSB" id="ctv-rr-rqE"/>
+                        <outlet property="usernameTextField" destination="d9U-bu-FHi" id="E8y-7g-iXN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
