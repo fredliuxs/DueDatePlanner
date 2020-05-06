@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xKK-XY-BCU">
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="DueDatePlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login With" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ek9-v9-uqX">
+                                <rect key="frame" x="0.0" y="60" width="768" height="119.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="100"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="100"/>
+                                </variation>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RHIT-logo" translatesAutoresizingMaskIntoConstraints="NO" id="Dkt-Zn-Ovk">
+                                <rect key="frame" x="0.0" y="189.5" width="768" height="211"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Dkt-Zn-Ovk" secondAttribute="height" multiplier="3299:906" id="3th-2R-woc"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="  Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="d9U-bu-FHi">
+                                <rect key="frame" x="40" y="450.5" width="688" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="  Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="iCZ-ak-uSB">
+                                <rect key="frame" x="40" y="538.5" width="688" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSM-u9-HZ2">
+                                <rect key="frame" x="259" y="625.5" width="250" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="AlY-xY-UDO">
+                                        <variation key="heightClass=regular" constant="40"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="dkk-g4-NMg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.4922244549" green="0.07907561213" blue="0.086245931679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.4922244549" green="0.07907561213" blue="0.086245931679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Dkt-Zn-Ovk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0JE-z7-7Zz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ek9-v9-uqX" secondAttribute="trailing" id="1Ki-qR-pTn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d9U-bu-FHi" secondAttribute="trailing" constant="40" id="1eN-M5-CUJ"/>
+                            <constraint firstItem="d9U-bu-FHi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="3Bc-AE-H3E"/>
+                            <constraint firstItem="fSM-u9-HZ2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6px-Eh-uVe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Dkt-Zn-Ovk" secondAttribute="trailing" id="JMq-LM-W7Z"/>
+                            <constraint firstItem="Ek9-v9-uqX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="MCR-9g-yO1"/>
+                            <constraint firstItem="Ek9-v9-uqX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xph-gO-UAu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iCZ-ak-uSB" secondAttribute="trailing" constant="40" id="iQ4-IL-bha"/>
+                            <constraint firstItem="Ek9-v9-uqX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ies-Vy-OKo"/>
+                            <constraint firstItem="d9U-bu-FHi" firstAttribute="top" secondItem="Dkt-Zn-Ovk" secondAttribute="bottom" constant="50" id="kCX-aE-pTu"/>
+                            <constraint firstItem="fSM-u9-HZ2" firstAttribute="top" secondItem="iCZ-ak-uSB" secondAttribute="bottom" constant="50" id="nD6-tS-JXX"/>
+                            <constraint firstItem="iCZ-ak-uSB" firstAttribute="top" secondItem="d9U-bu-FHi" secondAttribute="bottom" constant="50" id="nhF-BJ-j0n"/>
+                            <constraint firstItem="fSM-u9-HZ2" firstAttribute="top" secondItem="iCZ-ak-uSB" secondAttribute="bottom" constant="110" id="qDw-G6-mzd"/>
+                            <constraint firstItem="iCZ-ak-uSB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="toQ-mf-5Mr"/>
+                            <constraint firstItem="Dkt-Zn-Ovk" firstAttribute="top" secondItem="Ek9-v9-uqX" secondAttribute="bottom" constant="10" id="uyQ-5Z-MJY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ek9-v9-uqX" secondAttribute="trailing" id="vfs-eE-D7i"/>
+                            <constraint firstItem="Ek9-v9-uqX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="xYq-Ad-E9C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1Ki-qR-pTn"/>
+                                <exclude reference="vfs-eE-D7i"/>
+                                <exclude reference="MCR-9g-yO1"/>
+                                <exclude reference="Xph-gO-UAu"/>
+                                <exclude reference="ies-Vy-OKo"/>
+                                <exclude reference="xYq-Ad-E9C"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="qDw-G6-mzd"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="vfs-eE-D7i"/>
+                                <include reference="Xph-gO-UAu"/>
+                                <include reference="xYq-Ad-E9C"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="1Ki-qR-pTn"/>
+                                <include reference="MCR-9g-yO1"/>
+                                <include reference="ies-Vy-OKo"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-439" y="161"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UQY-d5-tQs">
+            <objects>
+                <navigationController id="xKK-XY-BCU" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bjx-IX-m3D">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="PDw-oO-1sQ" kind="relationship" relationship="rootViewController" id="THz-ID-Ay1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="th3-Sw-ITd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="409" y="161"/>
+        </scene>
+        <!--Due Date Planner-->
+        <scene sceneID="KyP-UO-Zuu">
+            <objects>
+                <viewController id="PDw-oO-1sQ" customClass="MainViewController" customModule="DueDatePlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U2G-fK-d5A">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXo-Fu-2KF">
+                                <rect key="frame" x="0.0" y="1262" width="1122" height="50"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="oxC-iS-pT6"/>
+                                    <barButtonItem title="Create New Due Date" id="QKJ-4f-os2">
+                                        <connections>
+                                            <segue destination="cjj-cS-pO4" kind="show" id="2z6-px-AgD"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="s0e-g0-0Yg"/>
+                                </items>
+                            </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Wy-MB-daz">
+                                <rect key="frame" x="0.0" y="50" width="768" height="924"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="noDueDate" textLabel="Srq-Oy-zn6" style="IBUITableViewCellStyleDefault" id="eR5-b1-IcP">
+                                        <rect key="frame" x="0.0" y="28" width="768" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eR5-b1-IcP" id="CoT-Rc-KQ5">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="No Due Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Srq-Oy-zn6">
+                                                    <rect key="frame" x="15" y="0.0" width="738" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="dueDate" id="0fH-u4-hwa">
+                                        <rect key="frame" x="0.0" y="71.5" width="768" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0fH-u4-hwa" id="Fs1-MV-BJr">
+                                            <rect key="frame" x="0.0" y="0.0" width="742" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="06R-48-iyo" kind="show" id="1MT-bI-Biy"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7Wy-MB-daz" firstAttribute="top" secondItem="Rtx-c9-Kug" secondAttribute="top" id="J5u-yq-M5X"/>
+                            <constraint firstItem="UXo-Fu-2KF" firstAttribute="trailing" secondItem="Rtx-c9-Kug" secondAttribute="trailing" id="Qsw-TP-TWD"/>
+                            <constraint firstItem="7Wy-MB-daz" firstAttribute="leading" secondItem="Rtx-c9-Kug" secondAttribute="leading" id="Wbl-Nh-YEU"/>
+                            <constraint firstItem="UXo-Fu-2KF" firstAttribute="bottom" secondItem="Rtx-c9-Kug" secondAttribute="bottom" id="aEf-pY-NkH"/>
+                            <constraint firstItem="Rtx-c9-Kug" firstAttribute="trailing" secondItem="7Wy-MB-daz" secondAttribute="trailing" id="jCz-tB-B82"/>
+                            <constraint firstItem="UXo-Fu-2KF" firstAttribute="leading" secondItem="Rtx-c9-Kug" secondAttribute="leading" id="kKL-Cb-jpI"/>
+                            <constraint firstItem="UXo-Fu-2KF" firstAttribute="top" secondItem="7Wy-MB-daz" secondAttribute="bottom" id="nl9-WD-YQz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Rtx-c9-Kug"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Due Date Planner" id="MUX-GO-JI2">
+                        <barButtonItem key="leftBarButtonItem" title="Sort" id="kRU-M3-0tY">
+                            <connections>
+                                <segue destination="M6z-Jw-OUn" kind="show" id="LS3-Xt-mQ8"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="Cgf-8n-KmM">
+                            <connections>
+                                <segue destination="iKm-UN-LMb" kind="show" id="Ll4-jI-Fp8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FHS-Nh-U6q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1108.6956521739132" y="160.71428571428569"/>
+        </scene>
+        <!--Sort Due Date-->
+        <scene sceneID="pjM-Sy-5mu">
+            <objects>
+                <viewController id="M6z-Jw-OUn" customClass="SortViewController" customModule="DueDatePlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cA9-af-Ilv">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="roZ-uK-uh4">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="WPS-JQ-OgZ">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="thP-Th-6JY"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="0ph-pX-phh"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sort Due Date" id="Nhz-iw-boW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uev-OK-Edg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2020" y="-329"/>
+        </scene>
+        <!--Edit Due Date-->
+        <scene sceneID="Opt-jj-Wrh">
+            <objects>
+                <viewController id="06R-48-iyo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aEV-n6-uB1">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="doG-sg-hkc"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Due Date" id="afU-ch-y2Y"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ETt-7l-Tya" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="232" y="862"/>
+        </scene>
+        <!--New Due Date-->
+        <scene sceneID="g9U-Zk-geQ">
+            <objects>
+                <viewController id="cjj-cS-pO4" customClass="CreateViewController" customModule="DueDatePlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZSW-SG-O9Z">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="qe9-hU-AiK"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Due Date" id="07T-r0-voQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6xg-DU-QJI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1109" y="862"/>
+        </scene>
+        <!--User Settings-->
+        <scene sceneID="TPh-Xm-BvQ">
+            <objects>
+                <viewController id="iKm-UN-LMb" customClass="SettingsViewController" customModule="DueDatePlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="04E-T0-Jf0">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z9b-iD-18L">
+                                <rect key="frame" x="0.0" y="946" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="VSL-F3-gtQ"/>
+                                    <barButtonItem title="Logout" id="Jag-g9-EIA"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="l5q-JN-Zfu"/>
+                                </items>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15D-b6-ybI">
+                                <rect key="frame" x="106" y="372" width="203" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Nerds Statistics"/>
+                                <connections>
+                                    <segue destination="QEA-bu-vlO" kind="show" id="HzY-FP-nNg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="2H8-sc-e7d"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="User Settings" id="dbj-k0-CxW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UMC-dI-aQ8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2019" y="370"/>
+        </scene>
+        <!--Stat View Controller-->
+        <scene sceneID="2iR-c1-lcn">
+            <objects>
+                <viewController id="QEA-bu-vlO" customClass="StatViewController" customModule="DueDatePlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mB6-7h-OtP">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="JnK-7Y-UIS"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6Vl-OO-spU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PYJ-HQ-X8n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3038" y="370"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="RHIT-logo" width="3299" height="906"/>
+    </resources>
+</document>

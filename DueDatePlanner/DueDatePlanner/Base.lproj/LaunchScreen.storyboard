@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By Xusheng Liu and Siwei Xu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vd6-fg-mAf">
+                                <rect key="frame" x="81" y="488" width="252" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date Planner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8q-SN-osZ">
+                                <rect key="frame" x="141" y="455" width="552" height="84"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="70"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHZ-UU-iLN">
+                                <rect key="frame" x="101.33333333333333" y="318.33333333333331" width="211.66666666666669" height="119.66666666666669"/>
+                                <string key="text">Due Date
+Planner</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="70"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.59789627789999999" green="0.20047697419999999" blue="0.1999817193" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="eHZ-UU-iLN" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1zH-kA-c7d"/>
+                            <constraint firstItem="j8q-SN-osZ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-100" id="3BL-Jb-NRG"/>
+                            <constraint firstItem="Vd6-fg-mAf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5lP-Df-Ii1"/>
+                            <constraint firstItem="eHZ-UU-iLN" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-70" id="Cnj-LY-GQu"/>
+                            <constraint firstItem="Vd6-fg-mAf" firstAttribute="top" secondItem="eHZ-UU-iLN" secondAttribute="bottom" constant="50" id="F2c-Lp-h3t"/>
+                            <constraint firstItem="eHZ-UU-iLN" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-100" id="INz-fa-HKY"/>
+                            <constraint firstItem="Vd6-fg-mAf" firstAttribute="top" secondItem="j8q-SN-osZ" secondAttribute="bottom" constant="200" id="aRF-27-3he"/>
+                            <constraint firstItem="j8q-SN-osZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="erD-yN-M6p"/>
+                            <constraint firstItem="Vd6-fg-mAf" firstAttribute="top" secondItem="j8q-SN-osZ" secondAttribute="bottom" constant="150" id="kIL-ey-rc2"/>
+                            <constraint firstItem="Vd6-fg-mAf" firstAttribute="top" secondItem="eHZ-UU-iLN" secondAttribute="bottom" constant="200" id="u2i-4h-dwY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="j8q-SN-osZ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="INz-fa-HKY"/>
+                                <exclude reference="3BL-Jb-NRG"/>
+                                <exclude reference="erD-yN-M6p"/>
+                                <exclude reference="aRF-27-3he"/>
+                                <exclude reference="kIL-ey-rc2"/>
+                                <exclude reference="u2i-4h-dwY"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="j8q-SN-osZ"/>
+                                <exclude reference="eHZ-UU-iLN"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Cnj-LY-GQu"/>
+                                <include reference="INz-fa-HKY"/>
+                                <include reference="3BL-Jb-NRG"/>
+                                <include reference="erD-yN-M6p"/>
+                                <exclude reference="F2c-Lp-h3t"/>
+                                <exclude reference="aRF-27-3he"/>
+                                <include reference="kIL-ey-rc2"/>
+                                <include reference="u2i-4h-dwY"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+</document>
