@@ -569,7 +569,9 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="kVD-Uu-5gB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Nerds Statistics"/>
+                                <state key="normal" title="Nerds Statistics">
+                                    <color key="titleColor" red="0.4922244549" green="0.07907561213" blue="0.086245931679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <segue destination="QEA-bu-vlO" kind="show" id="HzY-FP-nNg"/>
                                 </connections>
