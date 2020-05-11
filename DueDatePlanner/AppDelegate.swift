@@ -13,6 +13,7 @@ import GoogleSignIn
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
+    @available(iOS 9.0, *)
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         return (GIDSignIn.sharedInstance()?.handle(url))!
     }
@@ -26,6 +27,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         //        guard let authentication = user.authentication else { return }
         //        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
         //                                                       accessToken: authentication.accessToken)
+        _ = user.userID
+        _ = user.authentication.idToken
+        let fullName = user.profile.name!
+        _ = user.profile.givenName
+        _ = user.profile.familyName
+        let email = user.profile.email!
+        print("Name \(fullName) Email \(email)")
+        
+        guard let authentication = user.authentication else { return }
+        let googleCredential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+        // Use the google sign in credential to sign in with firebase
+        Auth.auth().signIn(with: googleCredential) { (authResult, error) in
+            if let error = error {
+                print("Firebase sign in error from Google! \(error)")
+                return
+            }
+            let loginVc = GIDSignIn.sharedInstance()?.presentingViewController as! LoginViewController
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            loginVc.view.window!.rootViewController = storyboard.instantiateViewController(withIdentifier: "NavViewController")
+        }
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
@@ -55,4 +76,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 }
-
