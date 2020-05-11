@@ -12,6 +12,7 @@ import MessageUI
 
 class SettingsViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
+    @IBOutlet weak var sendEmailBtn: UIButton!
     @IBOutlet weak var helloLabel: UILabel!
     
     override func viewDidLoad() {
@@ -20,6 +21,11 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
             helloLabel.text = "Hello \(Auth.auth().currentUser!.providerData[0].displayName!)!"
         } else {
             helloLabel.text = "Hello \(Auth.auth().currentUser!.uid)!"
+        }
+        if !MFMailComposeViewController.canSendMail() {
+            sendEmailBtn.isHidden = true
+        } else {
+            sendEmailBtn.isHidden = false
         }
     }
     

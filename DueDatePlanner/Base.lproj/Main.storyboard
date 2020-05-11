@@ -541,6 +541,7 @@
                     <navigationItem key="navigationItem" title="User Settings" id="dbj-k0-CxW"/>
                     <connections>
                         <outlet property="helloLabel" destination="HFw-6N-rGU" id="Zqu-cK-q6J"/>
+                        <outlet property="sendEmailBtn" destination="7eA-0D-x6v" id="wFw-xu-UiA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UMC-dI-aQ8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
