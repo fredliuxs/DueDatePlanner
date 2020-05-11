@@ -351,6 +351,9 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="mJw-kT-a9f"/>
                                     <barButtonItem title="Create" id="gnV-Qj-QIn">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="pressedCreate:" destination="cjj-cS-pO4" id="plT-hd-6Tp"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="2ik-Jl-Kn0"/>
                                 </items>
@@ -363,21 +366,37 @@
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="nameDidBeginEditing:" destination="cjj-cS-pO4" eventType="editingDidBegin" id="FQL-94-SYW"/>
+                                            <action selector="textFieldValueChanged:" destination="cjj-cS-pO4" eventType="valueChanged" id="wHc-16-jSk"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Department" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0nA-iR-1Er">
                                         <rect key="frame" x="0.0" y="80" width="280" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="departmentDidBeginEditing:" destination="cjj-cS-pO4" eventType="editingDidBegin" id="O4E-d9-vig"/>
+                                            <action selector="textFieldValueChanged:" destination="cjj-cS-pO4" eventType="editingDidEnd" id="uqb-hI-700"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Course Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6c5-JK-2tw">
                                         <rect key="frame" x="0.0" y="160" width="280" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                        <connections>
+                                            <action selector="courseNumberDidBeginEditing:" destination="cjj-cS-pO4" eventType="editingDidBegin" id="NFg-1Z-Nxu"/>
+                                            <action selector="textFieldValueChanged:" destination="cjj-cS-pO4" eventType="editingDidEnd" id="j8v-lZ-gR8"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Priority Level" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4pM-LB-Ked">
                                         <rect key="frame" x="0.0" y="240" width="280" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="priorityDidBeginEditing:" destination="cjj-cS-pO4" eventType="editingDidBegin" id="7Nd-R3-Vnu"/>
+                                            <action selector="textFieldValueChanged:" destination="cjj-cS-pO4" eventType="editingDidEnd" id="ayc-pk-Wua"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Due Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zPu-sW-QSm">
                                         <rect key="frame" x="0.0" y="320" width="280" height="40"/>
@@ -386,7 +405,7 @@
                                             <constraint firstAttribute="height" constant="40" id="ual-mr-4CZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="jAJ-dX-7s9"/>
@@ -403,6 +422,10 @@
                                                 <include reference="jAJ-dX-7s9"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="dueDateDidBeginEditing:" destination="cjj-cS-pO4" eventType="editingDidBegin" id="9X6-FB-GkC"/>
+                                            <action selector="textFieldValueChanged:" destination="cjj-cS-pO4" eventType="editingDidEnd" id="NxN-OM-qUR"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -446,6 +469,14 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="New Due Date" id="07T-r0-voQ"/>
+                    <connections>
+                        <outlet property="courseNumberTextField" destination="6c5-JK-2tw" id="UDm-ur-2xc"/>
+                        <outlet property="createToolbar" destination="Zs6-Rt-9o8" id="BiN-t3-vrw"/>
+                        <outlet property="departmentTextField" destination="0nA-iR-1Er" id="xU8-8G-sef"/>
+                        <outlet property="dueDateTextField" destination="zPu-sW-QSm" id="7I7-Qf-phd"/>
+                        <outlet property="nameTextField" destination="eVB-ZR-1pj" id="nHX-Ej-Nzl"/>
+                        <outlet property="priorityLevelTextField" destination="4pM-LB-Ked" id="xgq-qz-jhC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xg-DU-QJI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

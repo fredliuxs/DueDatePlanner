@@ -22,11 +22,7 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
         } else {
             helloLabel.text = "Hello \(Auth.auth().currentUser!.uid)!"
         }
-        if !MFMailComposeViewController.canSendMail() {
-            sendEmailBtn.isHidden = true
-        } else {
-            sendEmailBtn.isHidden = false
-        }
+        sendEmailBtn.isHidden = MFMailComposeViewController.canSendMail() ? true : false
     }
     
 

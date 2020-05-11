@@ -79,7 +79,7 @@ class MainTableViewController: UITableViewController {
         if(self.dueDatesListener != nil){
             self.dueDatesListener.remove()
         }
-        let query = self.dueDatesRef.order(by: self.orderBy ?? "dueDate", descending: true).limit(to: 50).whereField("author", isEqualTo: Auth.auth().currentUser?.uid)
+        let query = self.dueDatesRef.order(by: self.orderBy ?? "dueDate", descending: true).limit(to: 50).whereField("author", isEqualTo: Auth.auth().currentUser?.uid as Any)
         self.dueDatesListener = query.addSnapshotListener { (snapshot, error) in
             if let error = error {
                 print("Error fetching due dates \(error)")
@@ -123,10 +123,10 @@ class MainTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    
+        
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return max(self.allDueDates.count, 1)
+        return max(1, allDueDates.count)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
