@@ -10,11 +10,41 @@ import UIKit
 
 class SortViewController: UIViewController {
     
+    var orderBy: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-
+    @IBAction func pressedAlphabetButton(_ sender: Any) {
+        self.orderBy = "name"
+        self.goBack()
+    }
+    
+    @IBAction func pressedDepartmentButton(_ sender: Any) {
+        self.orderBy = "department"
+        self.goBack()
+    }
+    
+    @IBAction func pressedDueDateButton(_ sender: Any) {
+        self.orderBy = "dueDate"
+        self.goBack()
+    }
+    
+    @IBAction func pressedPriorityButton(_ sender: Any) {
+        self.orderBy = "priorityLevel"
+        self.goBack()
+    }
+    
+    func goBack(){
+        if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NavViewController") as? UINavigationController,
+            let mainViewController = controller.viewControllers.first as? MainTableViewController {
+            if self.orderBy != nil {
+                mainViewController.orderBy = self.orderBy
+            }
+            self.view.window?.rootViewController = controller
+        }
+    }
     /*
     // MARK: - Navigation
 

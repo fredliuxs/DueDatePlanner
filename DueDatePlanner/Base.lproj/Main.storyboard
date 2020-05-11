@@ -44,11 +44,19 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiT-eS-l6f">
+                                <rect key="frame" x="70.5" y="40" width="179.5" height="36"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.4922244549" green="0.07907561213" blue="0.086245931679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="SiT-eS-l6f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9CW-Qi-vXh"/>
                             <constraint firstItem="c9i-3s-QQA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="COI-y6-9r4"/>
                             <constraint firstItem="c9i-3s-QQA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="S60-HZ-he8"/>
+                            <constraint firstItem="SiT-eS-l6f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="UwD-Lk-Vjo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -131,7 +139,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="06R-48-iyo" kind="show" id="JFH-p3-8aQ"/>
+                                    <segue destination="06R-48-iyo" kind="show" identifier="showEditSegue" id="JFH-p3-8aQ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -173,24 +181,36 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <state key="normal" title="Alphabet"/>
+                                        <connections>
+                                            <action selector="pressedAlphabetButton:" destination="M6z-Jw-OUn" eventType="touchUpInside" id="qfF-Xl-yI6"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZx-xB-zuB">
                                         <rect key="frame" x="0.0" y="131" width="280" height="111"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <state key="normal" title="Department"/>
+                                        <connections>
+                                            <action selector="pressedDepartmentButton:" destination="M6z-Jw-OUn" eventType="touchUpInside" id="tjm-Cu-D3e"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eR8-XU-5PS">
                                         <rect key="frame" x="0.0" y="262" width="280" height="111"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <state key="normal" title="Due Date"/>
+                                        <connections>
+                                            <action selector="pressedDueDateButton:" destination="M6z-Jw-OUn" eventType="touchUpInside" id="ZQ8-Hz-bYF"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYR-OP-czx">
                                         <rect key="frame" x="0.0" y="393" width="280" height="111"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <state key="normal" title="Priority Level"/>
+                                        <connections>
+                                            <action selector="pressedPriorityButton:" destination="M6z-Jw-OUn" eventType="touchUpInside" id="Nef-Ie-Kcw"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -224,6 +244,9 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="dEJ-Uh-mcZ"/>
                                     <barButtonItem title="Update" id="1rZ-9t-eLT">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="pressedUpdate:" destination="06R-48-iyo" id="gyH-mv-2fl"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="YkY-fc-0B0"/>
                                 </items>
@@ -249,21 +272,33 @@
                                                 <include reference="Hbr-5K-PqJ"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="nameDidBeginEditing:" destination="06R-48-iyo" eventType="editingDidBegin" id="BQi-80-YcH"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Department" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wgp-8I-hJ8">
                                         <rect key="frame" x="0.0" y="80" width="280" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="departmentDidBeginEditing:" destination="06R-48-iyo" eventType="editingDidBegin" id="TF0-WB-D2b"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Course Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tyb-lF-wk0">
                                         <rect key="frame" x="0.0" y="160" width="280" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                        <connections>
+                                            <action selector="courseNumberDidBeginEditing:" destination="06R-48-iyo" eventType="editingDidBegin" id="YAO-wC-nSS"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Priority Level" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I4Q-Sy-4zX">
                                         <rect key="frame" x="0.0" y="240" width="280" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="priorityLevelDidBeginEditing:" destination="06R-48-iyo" eventType="editingDidBegin" id="aB9-Go-JeY"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Due Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J3j-Mc-D4F">
                                         <rect key="frame" x="0.0" y="320" width="280" height="40"/>
@@ -289,6 +324,9 @@
                                                 <include reference="9tE-mG-cMR"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="dueDateDidBeginEditing:" destination="06R-48-iyo" eventType="editingDidBegin" id="pC1-Il-vWD"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -332,6 +370,14 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Due Date" id="afU-ch-y2Y"/>
+                    <connections>
+                        <outlet property="courseNumberTextField" destination="tyb-lF-wk0" id="N1a-Wp-H8h"/>
+                        <outlet property="departmentTextField" destination="wgp-8I-hJ8" id="onl-ss-cJy"/>
+                        <outlet property="dueDateTextField" destination="J3j-Mc-D4F" id="9Gp-ss-p4F"/>
+                        <outlet property="nameTextField" destination="ouD-QQ-viH" id="for-B2-mj7"/>
+                        <outlet property="priorityLevelTextField" destination="I4Q-Sy-4zX" id="Nsx-2Q-w6K"/>
+                        <outlet property="updateToolbar" destination="xg6-2d-zfX" id="ySr-n2-Frb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETt-7l-Tya" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

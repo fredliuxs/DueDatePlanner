@@ -13,6 +13,7 @@ class MainTableViewController: UITableViewController {
     
     let showSettingSegueIdentifier = "showSettingsSegue"
     let showCreateSegueIdentifier = "showCreateSegue"
+    let showEditSegueIdentifier = "showEditSegue"
     let noDueDateCellIdentifier = "noDueDateCell"
     let dueDateCellIdentifier = "dueDateCell"
     
@@ -79,7 +80,7 @@ class MainTableViewController: UITableViewController {
         if(self.dueDatesListener != nil){
             self.dueDatesListener.remove()
         }
-        let query = self.dueDatesRef.order(by: self.orderBy ?? "dueDate", descending: true).limit(to: 50).whereField("author", isEqualTo: Auth.auth().currentUser?.uid as Any)
+        let query = self.dueDatesRef.limit(to: 50).whereField("author", isEqualTo: Auth.auth().currentUser?.uid as Any).order(by: self.orderBy ?? "dueDate", descending: false)
         self.dueDatesListener = query.addSnapshotListener { (snapshot, error) in
             if let error = error {
                 print("Error fetching due dates \(error)")
@@ -138,7 +139,7 @@ class MainTableViewController: UITableViewController {
             cell = tableView.dequeueReusableCell(withIdentifier: dueDateCellIdentifier, for: indexPath) as UITableViewCell
             let dueDate = self.allDueDates[indexPath.row]
             var title = dueDate.name + "  "
-            for _ in 0..<3 {
+            for _ in 0..<dueDate.priorityLevel {
                 title += "!"
             }
             cell.textLabel?.text = title
@@ -167,14 +168,18 @@ class MainTableViewController: UITableViewController {
         }
     }
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
+        if segue.identifier == self.showEditSegueIdentifier{
+            if let indexPath = tableView.indexPathForSelectedRow {
+                (segue.destination as! EditViewController).dueDateRef = self.dueDatesRef.document(self.allDueDates[indexPath.row].id!)
+            }
+            
+        }
      }
-     */
+     
     
 }

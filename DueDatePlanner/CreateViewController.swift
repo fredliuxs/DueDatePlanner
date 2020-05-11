@@ -23,6 +23,7 @@ class CreateViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     var departmentData = [String]()
     var priorityData = [String]()
     var dueDatesRef: CollectionReference?
+    var date: Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +48,8 @@ class CreateViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         self.departmentTextField.text = "ANTHS"
         self.priorityLevelTextField.text = "None"
         
-        self.dueDateTextField.text = self.formatDateForDisplay(date: Date())
+        self.date = Date()
+        self.dueDateTextField.text = self.formatDateForDisplay(date: self.date!)
         self.createToolbar.isHidden = true
         
         self.dueDatesRef = Firestore.firestore().collection("dueDates")
@@ -109,6 +111,8 @@ class CreateViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
         
+        datePicker.date = self.date!
+        
         // add toolbar to textField
         textField.inputAccessoryView = toolbar
         
@@ -123,11 +127,12 @@ class CreateViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     @objc func updateDateField(sender: UIDatePicker) {
         self.dueDateTextField?.text = formatDateForDisplay(date: sender.date)
+        self.date = sender.date
     }
     
     fileprivate func formatDateForDisplay(date: Date) -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd/YYYY"
+        formatter.dateFormat = "MM/dd/yyyy"
         return formatter.string(from: date)
     }
     
@@ -163,17 +168,8 @@ class CreateViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     func getTimestamp(dueDate: String) -> Timestamp {
         let inputFormatter = DateFormatter()
         inputFormatter.dateFormat = "MM/dd/yyyy"
-        let date = inputFormatter.date(from: dueDate + "T00:00:00+0000") ?? Date()
+        let date = inputFormatter.date(from: dueDate) ?? Date()
         return Timestamp(date: date)
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
