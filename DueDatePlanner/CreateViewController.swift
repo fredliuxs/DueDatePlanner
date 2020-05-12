@@ -53,6 +53,7 @@ class CreateViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         self.createToolbar.isHidden = true
         
         self.dueDatesRef = Firestore.firestore().collection("dueDates")
+        overrideUserInterfaceStyle = .light
 
     }
     
@@ -148,9 +149,8 @@ class CreateViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     @IBAction func pressedCreate(_ sender: Any) {
         let priorityLevel = self.countChar(text: self.priorityLevelTextField.text!, character: "!")
-        let courseNumber = Int(self.courseNumberTextField.text!) ?? -1
         let dueDate = self.getTimestamp(dueDate: self.dueDateTextField.text!)
-        let newDueDate = DueDate(name: self.nameTextField.text!, department: self.departmentTextField.text!, courseNumber: courseNumber, priorityLevel: priorityLevel, dueDate: dueDate)
+        let newDueDate = DueDate(name: self.nameTextField.text!, department: self.departmentTextField.text!, courseNumber: self.courseNumberTextField.text!, priorityLevel: priorityLevel, dueDate: dueDate)
         self.dueDatesRef!.addDocument(data: newDueDate.getData() as [String : Any])
         self.navigationController?.popViewController(animated: true)
     }

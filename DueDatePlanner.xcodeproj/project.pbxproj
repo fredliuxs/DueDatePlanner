@@ -30,6 +30,7 @@
 		665387FE246900D000ECF6E7 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		66538802246908A200ECF6E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		665388062469107000ECF6E7 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		6653880A246A2A4A00ECF6E7 /* DueDatePlanner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DueDatePlanner.entitlements; sourceTree = "<group>"; };
 		66AD4140246318E400F2B1B6 /* DueDatePlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DueDatePlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66AD4143246318E400F2B1B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66AD4145246318E400F2B1B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +89,7 @@
 		66AD4142246318E400F2B1B6 /* DueDatePlanner */ = {
 			isa = PBXGroup;
 			children = (
+				6653880A246A2A4A00ECF6E7 /* DueDatePlanner.entitlements */,
 				66AD4143246318E400F2B1B6 /* AppDelegate.swift */,
 				66AD4145246318E400F2B1B6 /* SceneDelegate.swift */,
 				66AD4147246318E400F2B1B6 /* LoginViewController.swift */,
@@ -405,6 +407,7 @@
 			baseConfigurationReference = 957DD6636CE89B529C22E46D /* Pods-DueDatePlanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DueDatePlanner/DueDatePlanner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HB3MC2RGD9;
 				INFOPLIST_FILE = DueDatePlanner/Info.plist;
@@ -414,6 +417,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.rose-hulman.DueDatePlanner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -424,6 +428,7 @@
 			baseConfigurationReference = 222133DE510E77E000A6A8B0 /* Pods-DueDatePlanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DueDatePlanner/DueDatePlanner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HB3MC2RGD9;
 				INFOPLIST_FILE = DueDatePlanner/Info.plist;
@@ -433,6 +438,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.rose-hulman.DueDatePlanner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

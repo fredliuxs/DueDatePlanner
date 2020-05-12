@@ -35,6 +35,10 @@ class SortViewController: UIViewController {
         self.orderBy = "priorityLevel"
         self.goBack()
     }
+    @IBAction func pressedCourseNumber(_ sender: Any) {
+        self.orderBy = "courseNumber"
+        self.goBack()
+    }
     
     func goBack(){
         if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NavViewController") as? UINavigationController,
@@ -42,7 +46,7 @@ class SortViewController: UIViewController {
             if self.orderBy != nil {
                 mainViewController.orderBy = self.orderBy
             }
-            self.view.window?.rootViewController = controller
+            self.navigationController?.popViewController(animated: true)
         }
     }
     /*

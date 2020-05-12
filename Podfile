@@ -11,4 +11,5 @@ target 'DueDatePlanner' do
   pod 'Firebase/Firestore'
   pod 'Rosefire', :git => 'https://ada.csse.rose-hulman.edu/rosefire/ios-sdk.git'
   pod 'GoogleSignIn'
+  pod 'FBSDKLoginKit'
 end
