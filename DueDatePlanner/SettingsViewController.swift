@@ -11,7 +11,7 @@ import Firebase
 import MessageUI
 import FBSDKLoginKit
 
-class SettingsViewController: UIViewController, MFMailComposeViewControllerDelegate {
+class SettingsViewController: UIViewController, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate {
     
     let showStatSegueIdentifier = "showStatSegue"
     
@@ -19,6 +19,7 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
     @IBOutlet weak var helloLabel: UILabel!
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var spinnerStackView: UIStackView!
+    var composeVC: MFMessageComposeViewController?
     
     var allDueDates = [DueDate]()
     
@@ -45,6 +46,35 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
                 }
             }
         }
+        if MFMessageComposeViewController.canSendText() || MFMailComposeViewController.canSendMail(){
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Actions", style: .plain,target: self,action: #selector(self.presentActions))
+        }
+    }
+    
+    @objc func presentActions(){
+        let actionSheetController = UIAlertController(title: "Photo Bucket Menu", message: nil, preferredStyle: .actionSheet)
+        if MFMailComposeViewController.canSendMail() {
+            actionSheetController.addAction(UIAlertAction(title: "Quick Email", style: .default) {
+                (_) in
+                let composeVC = MFMailComposeViewController()
+                composeVC.mailComposeDelegate = self
+                self.present(composeVC, animated: true, completion: nil)
+            })
+        }
+        if MFMessageComposeViewController.canSendText(){
+            actionSheetController.addAction(UIAlertAction(title: "Quick Text", style: .default){
+                (_) in
+                let composeVC = MFMessageComposeViewController()
+                composeVC.messageComposeDelegate = self
+                self.present(composeVC, animated: true, completion: nil)
+            })
+        }
+        actionSheetController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(actionSheetController, animated: true, completion: nil)
+    }
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        controller.dismiss(animated: true, completion: nil)
     }
     
     func getRandomImageUrl() -> String {
@@ -97,19 +127,19 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
     }
     
     
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
         if segue.identifier == "showStatSegue" {
             
         }
         if segue.identifier == showStatSegueIdentifier {
             (segue.destination as! StatViewController).allDueDates = self.allDueDates
         }
-     }
-     
+    }
+    
     
 }
