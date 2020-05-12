@@ -41,21 +41,8 @@
 	<string>535149117126495</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<string>fbapi</string>
-		<string>fbapi20130214</string>
-		<string>fbapi20130410</string>
-		<string>fbapi20130702</string>
-		<string>fbapi20131010</string>
-		<string>fbapi20131219</string>
-		<string>fbapi20140410</string>
-		<string>fbapi20140116</string>
-		<string>fbapi20150313</string>
-		<string>fbapi20150629</string>
-		<string>fbapi20160328</string>
-		<string>fbauth</string>
-		<string>fb-messenger-share-api</string>
-		<string>fbauth2</string>
-		<string>fbshareextension</string>
+		<string>googlechromes</string>
+		<string>comgooglemaps</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
@@ -64,6 +51,14 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSLocationUsageDescription</key>
+	<string>Due Date Planner hope to use your location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Due Date Planner hope to use your location</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Due Date Planner will save image to your photo library</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Due Date Planner hope to save image to your photo library</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -102,9 +97,5 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Due Date Planner will save image to your photo library</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Due Date Planner will save image to your photo library</string>
 </dict>
 </plist>

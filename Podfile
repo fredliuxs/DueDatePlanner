@@ -12,4 +12,7 @@ target 'DueDatePlanner' do
   pod 'Rosefire', :git => 'https://ada.csse.rose-hulman.edu/rosefire/ios-sdk.git'
   pod 'GoogleSignIn'
   pod 'FBSDKLoginKit'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
+
 end

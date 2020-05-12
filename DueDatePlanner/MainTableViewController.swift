@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import FBSDKLoginKit
+import CoreLocation
+import WebKit
 
 class MainTableViewController: UITableViewController {
     
@@ -17,6 +19,10 @@ class MainTableViewController: UITableViewController {
     let showEditSegueIdentifier = "showEditSegue"
     let noDueDateCellIdentifier = "noDueDateCell"
     let dueDateCellIdentifier = "dueDateCell"
+    let showMyLocationSegueIdentifier = "showMyLocationSegue"
+    let moodleSegueIdentifier = "moodleSegue"
+    let bannerSegueIdentifier = "bannerSegue"
+    let libCalSegueIdentifier = "libCalSegue"
     
     var authListenerHandle: AuthStateDidChangeListenerHandle!
     var dueDatesListener: ListenerRegistration!
@@ -24,6 +30,7 @@ class MainTableViewController: UITableViewController {
     var allDueDates = [DueDate]()
     var orderBy: String?
     var isShowAllDueDate = true
+    var locationManager: CLLocationManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +40,8 @@ class MainTableViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem?.tintColor = .white
         self.dueDatesRef = Firestore.firestore().collection("dueDates")
         overrideUserInterfaceStyle = .light
+        self.locationManager = CLLocationManager()
+        locationManager!.requestWhenInUseAuthorization()
     }
     
     @objc func presentMenu(_ sender: AnyObject){
@@ -56,10 +65,22 @@ class MainTableViewController: UITableViewController {
             UIImageWriteToSavedPhotosAlbum(imageToBeSaved!, nil, nil, nil);
         })
         
-//        actionSheetController.addAction(UIAlertAction(title: self.isShowAllDueDate ? "Show Incomplete Only" : "Show All Due Date", style: .default){ (_) in
-//            self.isShowAllDueDate = !self.isShowAllDueDate
-//            self.startListening()
-//        })
+        
+        actionSheetController.addAction(UIAlertAction(title: "Where Am I?", style: .default){ (_) in
+            self.performSegue(withIdentifier: self.showMyLocationSegueIdentifier, sender: self)
+        })
+        
+        actionSheetController.addAction(UIAlertAction(title: "Go to Moodle", style: .default){ (_) in
+            self.performSegue(withIdentifier: self.moodleSegueIdentifier, sender: self)
+        })
+        
+        actionSheetController.addAction(UIAlertAction(title: "Go to Banner", style: .default){ (_) in
+            self.performSegue(withIdentifier: self.bannerSegueIdentifier, sender: self)
+        })
+        
+        actionSheetController.addAction(UIAlertAction(title: "Reserve Library Room", style: .default){ (_) in
+            self.performSegue(withIdentifier: self.libCalSegueIdentifier, sender: self)
+        })
         
         actionSheetController.addAction(UIAlertAction(title: "Sign Out",
                                                       style: .destructive)

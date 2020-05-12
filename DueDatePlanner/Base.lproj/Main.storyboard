@@ -123,6 +123,41 @@ Please Sign In</string>
             </objects>
             <point key="canvasLocation" x="38" y="-7"/>
         </scene>
+        <!--Banner Web-->
+        <scene sceneID="UPw-Pr-tvF">
+            <objects>
+                <viewController id="Ww0-xj-lch" customClass="BannerViewController" customModule="DueDatePlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p87-bZ-ANA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y0g-5Q-G40">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Y0g-5Q-G40" firstAttribute="leading" secondItem="925-tk-cge" secondAttribute="leading" id="GLG-2l-Act"/>
+                            <constraint firstItem="925-tk-cge" firstAttribute="bottom" secondItem="Y0g-5Q-G40" secondAttribute="bottom" id="Kw8-NN-jDU"/>
+                            <constraint firstItem="Y0g-5Q-G40" firstAttribute="top" secondItem="925-tk-cge" secondAttribute="top" id="XNR-d5-UAp"/>
+                            <constraint firstItem="925-tk-cge" firstAttribute="trailing" secondItem="Y0g-5Q-G40" secondAttribute="trailing" id="zMb-dg-4Ra"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="925-tk-cge"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Banner Web" id="kyk-PJ-1US"/>
+                    <connections>
+                        <outlet property="webView" destination="Y0g-5Q-G40" id="3d7-ll-5h6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4VV-1N-GRU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1072" y="-728"/>
+        </scene>
         <!--Due Date Planner-->
         <scene sceneID="TOX-Un-otX">
             <objects>
@@ -193,11 +228,101 @@ Please Sign In</string>
                     <connections>
                         <segue destination="iKm-UN-LMb" kind="show" identifier="showSettingsSegue" id="47M-9f-rdf"/>
                         <segue destination="cjj-cS-pO4" kind="show" identifier="showCreateSegue" id="BAD-aF-4Gj"/>
+                        <segue destination="J41-Mh-JYV" kind="show" identifier="showMyLocationSegue" id="mdv-3d-ggr"/>
+                        <segue destination="Wvm-3C-Wlf" kind="show" identifier="moodleSegue" id="egu-9p-b1D"/>
+                        <segue destination="Ww0-xj-lch" kind="show" identifier="bannerSegue" id="ZWY-dS-7Cu"/>
+                        <segue destination="bna-rT-Ga0" kind="show" identifier="libCalSegue" id="IbG-bl-wQj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMz-Rh-dPi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1073" y="-7"/>
+        </scene>
+        <!--Lib Cal View Controller-->
+        <scene sceneID="yVg-5h-m6c">
+            <objects>
+                <viewController id="bna-rT-Ga0" customClass="LibCalViewController" customModule="DueDatePlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mv8-xm-OfG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2YG-Wh-6og">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xsO-5Z-s9t" firstAttribute="bottom" secondItem="2YG-Wh-6og" secondAttribute="bottom" id="IAR-Vi-kL4"/>
+                            <constraint firstItem="2YG-Wh-6og" firstAttribute="leading" secondItem="xsO-5Z-s9t" secondAttribute="leading" id="gRx-Dx-oEY"/>
+                            <constraint firstItem="xsO-5Z-s9t" firstAttribute="trailing" secondItem="2YG-Wh-6og" secondAttribute="trailing" id="oir-fo-0SQ"/>
+                            <constraint firstItem="2YG-Wh-6og" firstAttribute="top" secondItem="xsO-5Z-s9t" secondAttribute="top" id="v3o-mx-OYF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xsO-5Z-s9t"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yde-WW-fbX"/>
+                    <connections>
+                        <outlet property="webView" destination="2YG-Wh-6og" id="7CB-p8-A98"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lnQ-R4-wdf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="916" y="-1455"/>
+        </scene>
+        <!--Moodle-->
+        <scene sceneID="AKg-us-GJK">
+            <objects>
+                <viewController id="Wvm-3C-Wlf" customClass="MoodleViewController" customModule="DueDatePlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="faZ-Fy-neU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LWe-za-ulg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="KPh-pw-ZAb" firstAttribute="bottom" secondItem="LWe-za-ulg" secondAttribute="bottom" id="9sV-EB-jwn"/>
+                            <constraint firstItem="LWe-za-ulg" firstAttribute="top" secondItem="KPh-pw-ZAb" secondAttribute="top" id="Df4-FH-l9q"/>
+                            <constraint firstItem="LWe-za-ulg" firstAttribute="leading" secondItem="KPh-pw-ZAb" secondAttribute="leading" id="VyU-Xm-OvZ"/>
+                            <constraint firstItem="KPh-pw-ZAb" firstAttribute="trailing" secondItem="LWe-za-ulg" secondAttribute="trailing" id="gcr-RP-9ks"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KPh-pw-ZAb"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Moodle" id="4XX-cT-orG"/>
+                    <connections>
+                        <outlet property="webView" destination="LWe-za-ulg" id="Fdw-Jb-sdZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="blO-Jn-zvy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2019" y="-1702"/>
+        </scene>
+        <!--Where Am I Now-->
+        <scene sceneID="96T-ZY-Dl4">
+            <objects>
+                <viewController id="J41-Mh-JYV" customClass="WhereAmINowViewController" customModule="DueDatePlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DCY-es-qtP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="fTn-E5-Pvh"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Where Am I Now" id="yla-Bx-aIj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MzW-5O-OZo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2019" y="-1043"/>
         </scene>
         <!--Sort Due Date-->
         <scene sceneID="pjM-Sy-5mu">
@@ -214,7 +339,9 @@ Please Sign In</string>
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="118.33333333333333"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                        <state key="normal" title="Alphabet"/>
+                                        <state key="normal" title="Alphabet">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="pressedAlphabetButton:" destination="M6z-Jw-OUn" eventType="touchUpInside" id="qfF-Xl-yI6"/>
                                         </connections>
@@ -223,7 +350,9 @@ Please Sign In</string>
                                         <rect key="frame" x="0.0" y="138.33333333333334" width="374" height="118.33333333333334"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                        <state key="normal" title="Course Number"/>
+                                        <state key="normal" title="Course Number">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="pressedCourseNumber:" destination="M6z-Jw-OUn" eventType="touchUpInside" id="xKS-AN-gTZ"/>
                                         </connections>
@@ -232,7 +361,9 @@ Please Sign In</string>
                                         <rect key="frame" x="0.0" y="276.66666666666669" width="374" height="118.66666666666669"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                        <state key="normal" title="Department"/>
+                                        <state key="normal" title="Department">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="pressedDepartmentButton:" destination="M6z-Jw-OUn" eventType="touchUpInside" id="tjm-Cu-D3e"/>
                                         </connections>
@@ -241,7 +372,9 @@ Please Sign In</string>
                                         <rect key="frame" x="0.0" y="415.33333333333331" width="374" height="118.33333333333331"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                        <state key="normal" title="Due Date"/>
+                                        <state key="normal" title="Due Date">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="pressedDueDateButton:" destination="M6z-Jw-OUn" eventType="touchUpInside" id="ZQ8-Hz-bYF"/>
                                         </connections>
@@ -250,7 +383,9 @@ Please Sign In</string>
                                         <rect key="frame" x="0.0" y="553.66666666666663" width="374" height="118.33333333333337"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                        <state key="normal" title="Priority Level"/>
+                                        <state key="normal" title="Priority Level">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="pressedPriorityButton:" destination="M6z-Jw-OUn" eventType="touchUpInside" id="Nef-Ie-Kcw"/>
                                         </connections>
