@@ -16,27 +16,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="c9i-3s-QQA">
-                                <rect key="frame" x="82" y="408" width="250" height="220"/>
+                                <rect key="frame" x="82" y="438" width="250" height="160"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSM-u9-HZ2">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="40"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="55" id="AlY-xY-UDO">
-                                                <variation key="heightClass=regular" constant="40"/>
-                                            </constraint>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="dkk-g4-NMg"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Signin with Rosefire">
-                                            <color key="titleColor" red="0.4922244549" green="0.07907561213" blue="0.086245931679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cVa-ri-jPy"/>
-                                        </connections>
-                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bmI-T2-eMM" customClass="GIDSignInButton">
-                                        <rect key="frame" x="0.0" y="60" width="250" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="40"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="Kr7-a4-CjT"/>
@@ -44,7 +27,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kp-yZ-Xow">
-                                        <rect key="frame" x="0.0" y="120" width="250" height="40"/>
+                                        <rect key="frame" x="0.0" y="60" width="250" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="YfE-EQ-QNQ"/>
                                             <constraint firstAttribute="width" constant="250" id="YoS-rh-8ej"/>
@@ -55,7 +38,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vd-he-Uhz">
-                                        <rect key="frame" x="0.0" y="180" width="250" height="40"/>
+                                        <rect key="frame" x="0.0" y="120" width="250" height="40"/>
                                         <color key="backgroundColor" red="0.29019607843137252" green="0.0" blue="0.62745098039215685" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Bhs-gv-WhV"/>
@@ -92,7 +75,6 @@ Please Sign In</string>
                     <connections>
                         <outlet property="googleLoginButton" destination="bmI-T2-eMM" id="haW-Bi-aBX"/>
                         <outlet property="loginStackView" destination="c9i-3s-QQA" id="Zoq-QP-NA6"/>
-                        <outlet property="rosefireSignInButton" destination="fSM-u9-HZ2" id="gcR-dU-usx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

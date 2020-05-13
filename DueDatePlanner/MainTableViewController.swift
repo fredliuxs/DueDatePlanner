@@ -108,6 +108,7 @@ class MainTableViewController: UITableViewController {
             if (Auth.auth().currentUser == nil){
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 self.view.window!.rootViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+                self.navigationController?.popViewController(animated: true)
                 print("You messed up, there is no user. Go back to the login page")
             } else {
                 print("You are signed in already! Stay on this page")
@@ -121,50 +122,54 @@ class MainTableViewController: UITableViewController {
         if(self.dueDatesListener != nil){
             self.dueDatesListener.remove()
         }
-        let query = self.dueDatesRef.order(by: self.orderBy ?? "dueDate", descending: false)
-//        if !self.isShowAllDueDate {
-//            query = query.whereField("completed", isEqualTo: false)
-//        }
-        self.dueDatesListener = query.addSnapshotListener { (snapshot, error) in
-            if let error = error {
-                print("Error fetching due dates \(error)")
-                return
-            }
-            snapshot!.documentChanges.forEach({ (documentChanged) in
-                if (documentChanged.type == .added){
-                    print("Due Date Added")
-                    self.allDueDates.append(DueDate(document: documentChanged.document))
-                } else if (documentChanged.type == .modified){
-                    print("Due Date Modified")
-                    let modifiedDueDate = DueDate(document: documentChanged.document)
-                    for dueDate in self.allDueDates {
-                        if dueDate.id == modifiedDueDate.id {
-                            dueDate.name = modifiedDueDate.name
-                            dueDate.department = modifiedDueDate.department
-                            dueDate.courseNumber = modifiedDueDate.courseNumber
-                            dueDate.priorityLevel = modifiedDueDate.priorityLevel
-                            dueDate.dueDate = modifiedDueDate.dueDate
-                            dueDate.completed = modifiedDueDate.completed
-                            break
+        if Auth.auth().currentUser != nil {
+            let query = self.dueDatesRef.order(by: self.orderBy ?? "dueDate", descending: false).whereField("author", isEqualTo: Auth.auth().currentUser!.uid)
+            //        if !self.isShowAllDueDate {
+            //            query = query.whereField("completed", isEqualTo: false)
+            //        }
+                    self.dueDatesListener = query.addSnapshotListener { (snapshot, error) in
+                        if let error = error {
+                            print("Error fetching due dates \(error)")
+                            return
                         }
+                        snapshot!.documentChanges.forEach({ (documentChanged) in
+                            if (documentChanged.type == .added){
+                                print("Due Date Added")
+                                self.allDueDates.append(DueDate(document: documentChanged.document))
+                            } else if (documentChanged.type == .modified){
+                                print("Due Date Modified")
+                                let modifiedDueDate = DueDate(document: documentChanged.document)
+                                for dueDate in self.allDueDates {
+                                    if dueDate.id == modifiedDueDate.id {
+                                        dueDate.name = modifiedDueDate.name
+                                        dueDate.department = modifiedDueDate.department
+                                        dueDate.courseNumber = modifiedDueDate.courseNumber
+                                        dueDate.priorityLevel = modifiedDueDate.priorityLevel
+                                        dueDate.dueDate = modifiedDueDate.dueDate
+                                        dueDate.completed = modifiedDueDate.completed
+                                        break
+                                    }
+                                }
+                            } else if (documentChanged.type == .removed){
+                                print("Due Date Removed")
+                                for i in 0..<self.allDueDates.count {
+                                    if self.allDueDates[i].id == documentChanged.document.documentID {
+                                        self.allDueDates.remove(at: i)
+                                        break
+                                    }
+                                }
+                            }
+                            self.tableView.reloadData()
+                        })
                     }
-                } else if (documentChanged.type == .removed){
-                    print("Due Date Removed")
-                    for i in 0..<self.allDueDates.count {
-                        if self.allDueDates[i].id == documentChanged.document.documentID {
-                            self.allDueDates.remove(at: i)
-                            break
-                        }
-                    }
-                }
-                self.tableView.reloadData()
-            })
         }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.dueDatesListener.remove()
+        if self.dueDatesListener != nil {
+            self.dueDatesListener.remove()
+        }
         Auth.auth().removeStateDidChangeListener(authListenerHandle)
     }
     

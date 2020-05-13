@@ -15,7 +15,6 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
     
     let showStatSegueIdentifier = "showStatSegue"
     
-    @IBOutlet weak var sendEmailBtn: UIButton!
     @IBOutlet weak var helloLabel: UILabel!
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var spinnerStackView: UIStackView!
@@ -25,12 +24,13 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if Auth.auth().currentUser?.providerData.count != 0 {
+        if Auth.auth().currentUser?.providerData.count != 0 && Auth.auth().currentUser != nil {
             helloLabel.text = "Hello \(Auth.auth().currentUser!.providerData[0].displayName!)!"
-        } else {
+        } else if Auth.auth().currentUser != nil {
             helloLabel.text = "Hello \(Auth.auth().currentUser!.uid)!"
+        } else {
+            helloLabel.text = "Hello!"
         }
-        sendEmailBtn.isHidden = MFMailComposeViewController.canSendMail() ? false : true
         let imgString = self.getRandomImageUrl()
         if let imgUrl = URL(string: imgString) {
             DispatchQueue.global().async { // Download in the background

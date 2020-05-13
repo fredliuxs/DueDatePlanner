@@ -18,7 +18,6 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     
     @IBOutlet weak var googleLoginButton: GIDSignInButton!
     @IBOutlet weak var loginStackView: UIStackView!
-    @IBOutlet weak var rosefireSignInButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,26 +29,9 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
         let fbLoginButton = FBLoginButton()
         fbLoginButton.delegate = self
         fbLoginButton.center.x = self.view.center.x
-        fbLoginButton.center.y = self.view.center.y - 10
+        fbLoginButton.center.y = self.view.center.y + 20
         fbLoginButton.frame.size.height = 40
         self.view.addSubview(fbLoginButton)
-    }
-    
-    @IBAction func login(_ sender: Any) {
-        Rosefire.sharedDelegate()?.uiDelegate = self
-        Rosefire.sharedDelegate()?.signIn(registryToken: REGISTRY_TOKEN, withClosure: { (err, result) in
-            if (err != nil){
-                return;
-            }
-            Auth.auth().signIn(withCustomToken: result!.token) { (user, error) in
-                if (err != nil){
-                    print("\(String(describing: error))")
-                }
-                print("user login successful")
-                // User Successfully Signed In
-                self.showNavViewController()
-            }
-        })
     }
     
     func loginCompletionCallback(_ user: User?, _ error: Error?) {

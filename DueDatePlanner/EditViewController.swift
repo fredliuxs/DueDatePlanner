@@ -20,8 +20,10 @@ class EditViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     var toolbar: UIToolbar?
     var departmentPicker: UIPickerView?
     var priorityPicker: UIPickerView?
-    var departmentData = [String]()
-    var priorityData = [String]()
+    var courseNumberPicker: UIPickerView?
+    var departmentData = [[String]]()
+    var priorityData = [[String]]()
+    var courseNumberData = [[Character]]()
     var dueDateRef: DocumentReference?
     var dueDateListener: ListenerRegistration!
     var dueDate : DueDate?
@@ -43,8 +45,16 @@ class EditViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         self.priorityPicker?.delegate = self
         self.priorityPicker?.dataSource = self
         
-        self.departmentData = ["ANTHS","ARTSH","BE", "BIO", "CHE", "CHEM", "CE", "CSSE", "ECE","ECONS","EM","EMGT","ENGD","ENGLH","EP", "ES","GEOGS","GERL","HISTH","HUMH","JAPNL","MA","ME","OE","PH","PHILH","POLSS","PSYCS","RELGH","RH","SPANL"]
-        self.priorityData = ["None","!!!", "!!", "!"]
+        self.courseNumberPicker = UIPickerView()
+        self.courseNumberPicker?.delegate = self
+        self.courseNumberPicker?.dataSource = self
+        
+        self.departmentData = [["ANTHS","ARTSH","BE", "BIO", "CHE", "CHEM", "CE", "CSSE", "ECE","ECONS","EM","EMGT","ENGD","ENGLH","EP", "ES","GEOGS","GERL","HISTH","HUMH","JAPNL","MA","ME","OE","PH","PHILH","POLSS","PSYCS","RELGH","RH","SPANL"]]
+        self.priorityData = [["None","!!!", "!!", "!"]]
+        self.courseNumberData = [["1","2","3","4","5","6","7","8","9"],
+                                 ["0","1","2","3","4","5","6","7","8","9"],
+                                 ["0","1","2","3","4","5","6","7","8","9"]] as [[Character]]
+        
         overrideUserInterfaceStyle = .light
     }
     
@@ -81,6 +91,7 @@ class EditViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     @IBAction func courseNumberDidBeginEditing(_ textField: UITextField) {
         textField.inputAccessoryView = toolbar
+        textField.inputView = self.courseNumberPicker
     }
     @IBAction func nameDidBeginEditing(_ textField: UITextField) {
         textField.inputAccessoryView = toolbar
@@ -112,34 +123,55 @@ class EditViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     // Number of columns of data
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        if pickerView == self.departmentPicker{
+            return self.departmentData.count
+        } else if pickerView == self.priorityPicker {
+            return self.priorityData.count
+        } else if pickerView == self.courseNumberPicker {
+            return self.courseNumberData.count
+        }
+        return 0
     }
     
     // The number of rows of data
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == self.departmentPicker{
-            return self.departmentData.count
-        } else {
-            return self.priorityData.count
+            return self.departmentData[component].count
+        } else if pickerView == self.priorityPicker {
+            return self.priorityData[component].count
+        } else if pickerView == self.courseNumberPicker {
+            return self.courseNumberData[component].count
         }
+        return 0
     }
     
     // The data to return fopr the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == self.departmentPicker{
-            return self.departmentData[row]
+            return self.departmentData[component][row]
         } else if pickerView == self.priorityPicker {
-            return self.priorityData[row]
+            return self.priorityData[component][row]
+        } else if pickerView == self.courseNumberPicker {
+            return String(self.courseNumberData[component][row])
         }
         return ""
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == self.departmentPicker {
-            self.departmentTextField.text = self.departmentData[row]
+            self.departmentTextField.text = self.departmentData[component][row]
         } else if pickerView == self.priorityPicker {
-            self.priorityLevelTextField.text = self.priorityData[row]
+            self.priorityLevelTextField.text = self.priorityData[component][row]
+        } else if pickerView == self.courseNumberPicker {
+            let charToReplace = self.courseNumberData[component][row]
+            self.courseNumberTextField.text = replace(self.courseNumberTextField.text!, component, charToReplace)
         }
+    }
+    
+    func replace(_ myString: String, _ index: Int, _ newChar: Character) -> String {
+        var chars = Array(myString) as [Character]     // gets an array of characters
+        chars[index] = newChar
+        return String(chars)
     }
     
     fileprivate func formatDateForDisplay(date: Date) -> String {
