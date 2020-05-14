@@ -105,15 +105,15 @@ Please Sign In</string>
             </objects>
             <point key="canvasLocation" x="38" y="-7"/>
         </scene>
-        <!--Banner Web-->
-        <scene sceneID="UPw-Pr-tvF">
+        <!--Web Link View Controller-->
+        <scene sceneID="y4H-dA-TXP">
             <objects>
-                <viewController id="Ww0-xj-lch" customClass="BannerViewController" customModule="DueDatePlanner" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="p87-bZ-ANA">
+                <viewController id="Xid-n4-H8U" customClass="WebLinkViewController" customModule="DueDatePlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TZj-3p-Z7n">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y0g-5Q-G40">
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t15-kh-iUX">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
@@ -124,21 +124,21 @@ Please Sign In</string>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Y0g-5Q-G40" firstAttribute="leading" secondItem="925-tk-cge" secondAttribute="leading" id="GLG-2l-Act"/>
-                            <constraint firstItem="925-tk-cge" firstAttribute="bottom" secondItem="Y0g-5Q-G40" secondAttribute="bottom" id="Kw8-NN-jDU"/>
-                            <constraint firstItem="Y0g-5Q-G40" firstAttribute="top" secondItem="925-tk-cge" secondAttribute="top" id="XNR-d5-UAp"/>
-                            <constraint firstItem="925-tk-cge" firstAttribute="trailing" secondItem="Y0g-5Q-G40" secondAttribute="trailing" id="zMb-dg-4Ra"/>
+                            <constraint firstItem="FqO-rD-IO6" firstAttribute="bottom" secondItem="t15-kh-iUX" secondAttribute="bottom" id="16H-Ns-kfg"/>
+                            <constraint firstItem="FqO-rD-IO6" firstAttribute="trailing" secondItem="t15-kh-iUX" secondAttribute="trailing" id="A4Q-D2-N2O"/>
+                            <constraint firstItem="t15-kh-iUX" firstAttribute="leading" secondItem="FqO-rD-IO6" secondAttribute="leading" id="IhN-0w-Ixm"/>
+                            <constraint firstItem="t15-kh-iUX" firstAttribute="top" secondItem="FqO-rD-IO6" secondAttribute="top" id="QGa-WU-jZa"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="925-tk-cge"/>
+                        <viewLayoutGuide key="safeArea" id="FqO-rD-IO6"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Banner Web" id="kyk-PJ-1US"/>
+                    <navigationItem key="navigationItem" id="XtK-nI-qgM"/>
                     <connections>
-                        <outlet property="webView" destination="Y0g-5Q-G40" id="3d7-ll-5h6"/>
+                        <outlet property="webView" destination="t15-kh-iUX" id="OxB-aH-uUW"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4VV-1N-GRU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FNJ-KC-QXe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1072" y="-728"/>
+            <point key="canvasLocation" x="-186" y="-919"/>
         </scene>
         <!--Due Date Planner-->
         <scene sceneID="TOX-Un-otX">
@@ -211,84 +211,14 @@ Please Sign In</string>
                         <segue destination="iKm-UN-LMb" kind="show" identifier="showSettingsSegue" id="47M-9f-rdf"/>
                         <segue destination="cjj-cS-pO4" kind="show" identifier="showCreateSegue" id="BAD-aF-4Gj"/>
                         <segue destination="J41-Mh-JYV" kind="show" identifier="showMyLocationSegue" id="mdv-3d-ggr"/>
-                        <segue destination="Wvm-3C-Wlf" kind="show" identifier="moodleSegue" id="egu-9p-b1D"/>
-                        <segue destination="Ww0-xj-lch" kind="show" identifier="bannerSegue" id="ZWY-dS-7Cu"/>
-                        <segue destination="bna-rT-Ga0" kind="show" identifier="libCalSegue" id="IbG-bl-wQj"/>
+                        <segue destination="Xid-n4-H8U" kind="show" identifier="bannerSegue" id="UZP-v5-m9T"/>
+                        <segue destination="Xid-n4-H8U" kind="show" identifier="moodleSegue" id="tGr-ed-PGC"/>
+                        <segue destination="Xid-n4-H8U" kind="show" identifier="libCalSegue" id="bH2-Ri-Ofb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMz-Rh-dPi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1073" y="-7"/>
-        </scene>
-        <!--Lib Cal View Controller-->
-        <scene sceneID="yVg-5h-m6c">
-            <objects>
-                <viewController id="bna-rT-Ga0" customClass="LibCalViewController" customModule="DueDatePlanner" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Mv8-xm-OfG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2YG-Wh-6og">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="xsO-5Z-s9t" firstAttribute="bottom" secondItem="2YG-Wh-6og" secondAttribute="bottom" id="IAR-Vi-kL4"/>
-                            <constraint firstItem="2YG-Wh-6og" firstAttribute="leading" secondItem="xsO-5Z-s9t" secondAttribute="leading" id="gRx-Dx-oEY"/>
-                            <constraint firstItem="xsO-5Z-s9t" firstAttribute="trailing" secondItem="2YG-Wh-6og" secondAttribute="trailing" id="oir-fo-0SQ"/>
-                            <constraint firstItem="2YG-Wh-6og" firstAttribute="top" secondItem="xsO-5Z-s9t" secondAttribute="top" id="v3o-mx-OYF"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="xsO-5Z-s9t"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="yde-WW-fbX"/>
-                    <connections>
-                        <outlet property="webView" destination="2YG-Wh-6og" id="7CB-p8-A98"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lnQ-R4-wdf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="916" y="-1455"/>
-        </scene>
-        <!--Moodle-->
-        <scene sceneID="AKg-us-GJK">
-            <objects>
-                <viewController id="Wvm-3C-Wlf" customClass="MoodleViewController" customModule="DueDatePlanner" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="faZ-Fy-neU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LWe-za-ulg">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="KPh-pw-ZAb" firstAttribute="bottom" secondItem="LWe-za-ulg" secondAttribute="bottom" id="9sV-EB-jwn"/>
-                            <constraint firstItem="LWe-za-ulg" firstAttribute="top" secondItem="KPh-pw-ZAb" secondAttribute="top" id="Df4-FH-l9q"/>
-                            <constraint firstItem="LWe-za-ulg" firstAttribute="leading" secondItem="KPh-pw-ZAb" secondAttribute="leading" id="VyU-Xm-OvZ"/>
-                            <constraint firstItem="KPh-pw-ZAb" firstAttribute="trailing" secondItem="LWe-za-ulg" secondAttribute="trailing" id="gcr-RP-9ks"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="KPh-pw-ZAb"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Moodle" id="4XX-cT-orG"/>
-                    <connections>
-                        <outlet property="webView" destination="LWe-za-ulg" id="Fdw-Jb-sdZ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="blO-Jn-zvy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2019" y="-1702"/>
         </scene>
         <!--Where Am I Now-->
         <scene sceneID="96T-ZY-Dl4">
@@ -845,6 +775,9 @@ Please Sign In</string>
             <point key="canvasLocation" x="3038" y="370"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="bH2-Ri-Ofb"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="Github-SignInBtn" width="440" height="68"/>

@@ -251,6 +251,12 @@ class MainTableViewController: UITableViewController {
             }
         } else if segue.identifier == self.showSettingSegueIdentifier {
             (segue.destination as! SettingsViewController).allDueDates = self.allDueDates
+        } else if segue.identifier == self.bannerSegueIdentifier {
+            (segue.destination as! WebLinkViewController).url = URL(string: "https://bannerweb.rose-hulman.edu/login")!
+        } else if segue.identifier == self.moodleSegueIdentifier {
+            (segue.destination as! WebLinkViewController).url = URL(string: "https://moodle.rose-hulman.edu/")!
+        } else if segue.identifier == self.libCalSegueIdentifier {
+            (segue.destination as! WebLinkViewController).url = URL(string: "https://rose-hulman.libcal.com/")!
         }
      }
      

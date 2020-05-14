@@ -1,25 +1,29 @@
 //
-//  MoodleViewController.swift
+//  WebLinkViewController.swift
 //  DueDatePlanner
 //
-//  Created by Xusheng Liu on 5/12/20.
+//  Created by Xusheng Liu on 5/13/20.
 //  Copyright © 2020 Rose-Hulman. All rights reserved.
 //
 
 import UIKit
 import WebKit
 
-class MoodleViewController: UIViewController {
+class WebLinkViewController: UIViewController {
 
+    var url: URL?
     @IBOutlet weak var webView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let moodleURL = URL(string: "https://moodle.rose-hulman.edu/")!
-        self.webView.load(URLRequest(url: moodleURL))
+        if (url == nil) {
+            self.navigationController?.popViewController(animated: true)
+        }
+        self.webView.load(URLRequest(url: self.url!))
         self.webView.allowsBackForwardNavigationGestures = true
         self.webView.allowsLinkPreview = true
     }
+    
 
     /*
     // MARK: - Navigation
