@@ -9,46 +9,38 @@
 import UIKit
 
 class SortViewController: UIViewController {
-    
-    var orderBy: String?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func pressedAlphabetButton(_ sender: Any) {
-        self.orderBy = "name"
-        self.goBack()
+        self.goBack(orderBy: "name")
     }
     
     @IBAction func pressedDepartmentButton(_ sender: Any) {
-        self.orderBy = "department"
-        self.goBack()
+        self.goBack(orderBy: "department")
     }
     
     @IBAction func pressedDueDateButton(_ sender: Any) {
-        self.orderBy = "dueDate"
-        self.goBack()
+        self.goBack(orderBy: "dueDate")
     }
     
     @IBAction func pressedPriorityButton(_ sender: Any) {
-        self.orderBy = "priorityLevel"
-        self.goBack()
+        self.goBack(orderBy: "priorityLevel")
     }
     @IBAction func pressedCourseNumber(_ sender: Any) {
-        self.orderBy = "courseNumber"
-        self.goBack()
+        self.goBack(orderBy: "courseNumber")
     }
     
-    func goBack(){
+    func goBack(orderBy: String){
         if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NavViewController") as? UINavigationController,
             let mainViewController = controller.viewControllers.first as? MainTableViewController {
-            if self.orderBy != nil {
-                mainViewController.orderBy = self.orderBy
-            }
+            mainViewController.orderBy = orderBy
             self.navigationController?.popViewController(animated: true)
         }
     }
+    
     /*
     // MARK: - Navigation
 
