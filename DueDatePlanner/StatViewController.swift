@@ -35,7 +35,7 @@ class StatViewController: UIViewController {
             }
         }
         self.total = self.notDueCount + self.lateCount + self.completedCount
-        self.completedLabel.text = "\(self.completedCount)/\(self.total) Complted"
+        self.completedLabel.text = "\(self.completedCount)/\(self.total) Completed"
         lateLabel.text = "\(self.lateCount)/\(self.total) Late"
         notDueLabel.text = "\(self.notDueCount)/\(self.total) Not Due"
     }
