@@ -60,7 +60,7 @@ class WhereAmINowViewController: UIViewController {
     
     @objc func launchGoogleMapWithoutStartingLocation(){
         let url = URL(string: "https://www.google.com/maps/dir//'\(self.RHIT_LATITUDE),\(self.RHIT_LONGITUDE)'")!
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
     @objc func launchGoogleMapWithStartingLocation() {
