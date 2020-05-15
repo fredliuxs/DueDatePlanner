@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Rosefire
 import Firebase
 import GoogleSignIn
 import FBSDKLoginKit
